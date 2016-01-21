@@ -1,0 +1,221 @@
+@import normalize
+@import breakpoint
+@import susy
+@import compass/css3
+
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One)
+
+$susy: (columns: 4, global-box-sizing: border-box, gutters: 29 / 69, container: 1169px, debug: (image: hide))
+$tablet: 600px
+$desktop: 980px
+$fontbase: 10px
+$line-height-base: 26px
+
+@mixin cf
+	&:after
+		content: ''
+		clear: both
+		display: table
+
+@include border-box-sizing
+
+.wrap
+	@include container()
+	background: rgb(255, 255, 255)
+
+//Layout
+html
+	font-size: $fontbase
+
+body
+	background: rgb(42, 42, 43)
+	font-family: "Fjalla One"
+	font-size: 1rem
+
+header
+	max-width: 100%
+	margin: 0 auto
+	background: rgb(34, 38, 40)
+//.wrap__main
+//  width: 100%
+//  margin: 0 auto
+//  background: rgb(231, 231, 231)
+
+.wrap__header
+	@include container()
+	height: 80px
+	background: rgb(34, 38, 40)
+
+.logo
+	a
+		text-transform: uppercase
+		text-decoration: none
+		float: left
+		color: white
+		font-family: 'Fjalla One', sans-serif
+		font-size: 1.35rem
+		margin-top: 27px
+
+.menu
+	float: right
+	margin-top: 30px
+	ul
+		padding: 0
+		margin: 0
+		li
+			list-style: none
+			float: left
+			padding: 0
+			margin: 0
+			a
+				text-transform: uppercase
+				text-decoration: none
+				color: white
+				font-family: 'Fjalla One', sans-serif
+				font-size: 0.8rem
+				padding: 34px 22px
+				margin: 0
+				&:hover
+					background: rgb(203, 91, 66)
+					padding: 34px 22px
+
+.owl-carousel
+	.item
+		margin: 0 auto
+		width: 100%
+		background: url("../img/slider__pic_1.png") no-repeat center
+		background-size: cover
+		img
+			margin: 0 auto
+			width: 100%
+			max-width: 1170px
+			max-height: 560px
+			opacity: 0
+
+.slider
+	max-width: 100%
+	margin: 0 auto
+	background: rgb(40, 40, 40)
+
+.customNavigation
+	z-index: 999
+	position: absolute
+	top: 300px
+	//right: 0
+	a
+		@include user-select(none)
+		.icons
+			background: url('../img/sprites/sprites.png') no-repeat
+			display: inline-block
+		.icon-next
+			background-position: -50px 0
+			max-width: 34px
+			max-height: 70px
+		.icon-prev
+			background-position: 0 0
+			max-width: 34px
+			max-height: 70px
+
+.underheader
+	@include cf
+
+.underheader__rocket
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 first)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4 first)
+
+.underheader__shield
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 last)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4)
+
+.underheader__firehelper
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 first)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4 last)
+
+.mid
+	@include cf
+
+.mid__picture
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(full)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4 last)
+
+.mid__articles
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(full)
+	@include susy-breakpoint($desktop, 12)
+		@include span(8)
+
+.articles__subarticle1
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 first)
+	@include susy-breakpoint($desktop, 8)
+		@include span(4 first)
+
+.articles__subarticle2
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 last)
+	@include susy-breakpoint($desktop, 8)
+		@include span(4 last)
+
+.subscribe
+	@include cf
+
+.quote
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(full)
+	@include susy-breakpoint($desktop, 12)
+		@include span(6 first)
+
+.form
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+	@include span(full)
+	@include susy-breakpoint($desktop, 12)
+		@include span(6 last)
+
+.prefooter
+	@include cf
+
+.topics
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 first)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4 first)
+
+.feedback
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 last)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4)
+
+.contacts
+	@include span(full)
+	@include susy-breakpoint($tablet, 8)
+		@include span(4 first)
+	@include susy-breakpoint($desktop, 12)
+		@include span(4 last)
+
+.footer
+	@include cf
+
+//Styles
+.mid__picture
+	background: pink
+	height: 30vh
