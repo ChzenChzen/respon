@@ -31,6 +31,16 @@ body
 	background: rgb(42, 42, 43)
 	font-family: "Fjalla One"
 	font-size: 1rem
+	h2
+		margin: 0
+		color: rgb(32, 38, 40)
+		font-family: "Fjalla One"
+		font-size: 2.1rem
+		font-weight: 400
+		text-transform: uppercase
+
+.icons
+	background: url('../img/sprites/sprites.png') no-repeat
 
 header
 	max-width: 100%
@@ -104,9 +114,6 @@ header
 	//right: 0
 	a
 		@include user-select(none)
-		.icons
-			background: url('../img/sprites/sprites.png') no-repeat
-			display: inline-block
 		.icon-next
 			background-position: -50px 0
 			max-width: 34px
@@ -118,27 +125,66 @@ header
 
 .underheader
 	@include cf
+	background: rgb(231, 231, 231)
+	@include span(full)
+		padding: 20px 0
+	@include susy-breakpoint($tablet, 8)
+		@include span(full)
+		padding: 40px 0
+	@include susy-breakpoint($desktop, 12)
+		@include span(full)
+		padding: 80px 0
 
 .underheader__rocket
-	@include span(full)
-	@include susy-breakpoint($tablet, 8)
+	@include susy-breakpoint(max-width $tablet, 4)
+		@include span(full)
+		margin-top: 20px
+	@include susy-breakpoint($tablet $desktop, 8)
 		@include span(4 first)
 	@include susy-breakpoint($desktop, 12)
 		@include span(4 first)
 
+.underheader__rocket_icon
+	background-position: -100px 0
+	width: 70px
+	height: 70px
+	float: left
+	@include cf
+
+.rocket__text, .shield__text, .firehelper__text
+	width: 263px
+
+
 .underheader__shield
-	@include span(full)
-	@include susy-breakpoint($tablet, 8)
+	@include susy-breakpoint(max-width $tablet, 4)
+		@include span(full)
+		margin-top: 20px
+	@include susy-breakpoint($tablet $desktop, 8)
 		@include span(4 last)
 	@include susy-breakpoint($desktop, 12)
 		@include span(4)
 
+.underheader__shield_icon
+	background-position: -200px 0
+	width: 70px
+	height: 70px
+	float: left
+
 .underheader__firehelper
-	@include span(full)
-	@include susy-breakpoint($tablet, 8)
+	@include susy-breakpoint(max-width $tablet, 4)
+		@include span(full)
+		margin-top: 20px
+	@include susy-breakpoint($tablet $desktop, 8)
 		@include span(4 first)
+		margin-top: 40px
 	@include susy-breakpoint($desktop, 12)
 		@include span(4 last)
+
+.underheader__firehelper_icon
+	background-position: -300px 0
+	width: 70px
+	height: 70px
+	float: left
 
 .mid
 	@include cf
