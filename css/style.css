@@ -400,9 +400,20 @@ html {
 }
 
 body {
-  background: #2a2a2b;
-  font-family: "Fjalla One";
+  font-family: "Fjalla One", sans-serif;
   font-size: 1rem;
+}
+body p, body a {
+  font-family: Lato, sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+}
+body a {
+  color: #e84c3d;
+}
+body p {
+  color: #767c7e;
 }
 body h2 {
   margin: 0;
@@ -415,12 +426,19 @@ body h2 {
 
 .icons {
   background: url("../img/sprites/sprites.png") no-repeat;
+  display: block;
 }
 
 header {
   max-width: 100%;
   margin: 0 auto;
   background: #222628;
+}
+
+.wrap__main {
+  width: 100%;
+  margin: 0 auto;
+  background: white;
 }
 
 .wrap__header {
@@ -516,6 +534,12 @@ header {
   max-height: 70px;
 }
 
+.wrap__underheader {
+  width: 100%;
+  margin: 0 auto;
+  background: #e7e7e7;
+}
+
 .underheader {
   background: #e7e7e7;
   width: 100%;
@@ -544,7 +568,8 @@ header {
     float: left;
     margin-left: 0;
     margin-right: 0;
-    padding: 80px 0;
+    padding-top: 100px;
+    padding-bottom: 20px;
   }
 }
 
@@ -586,6 +611,7 @@ header {
 
 .rocket__text, .shield__text, .firehelper__text {
   width: 263px;
+  margin-left: 30%;
 }
 
 @media (max-width: 600px) {

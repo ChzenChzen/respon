@@ -28,9 +28,20 @@ html
 	font-size: $fontbase
 
 body
-	background: rgb(42, 42, 43)
-	font-family: "Fjalla One"
+	font-family: "Fjalla One", sans-serif
 	font-size: 1rem
+	p, a
+		font-family: Lato, sans-serif
+		font-size: 1.4rem
+		line-height: 2.4rem
+		font-weight: 400
+
+	a
+		color: rgb(232, 76, 61)
+
+	p
+		color: rgb(118, 124, 126)
+
 	h2
 		margin: 0
 		color: rgb(32, 38, 40)
@@ -38,18 +49,20 @@ body
 		font-size: 2.1rem
 		font-weight: 400
 		text-transform: uppercase
-
+		
 .icons
 	background: url('../img/sprites/sprites.png') no-repeat
+	display: block
 
 header
 	max-width: 100%
 	margin: 0 auto
 	background: rgb(34, 38, 40)
-//.wrap__main
-//  width: 100%
-//  margin: 0 auto
-//  background: rgb(231, 231, 231)
+
+.wrap__main
+	width: 100%
+	margin: 0 auto
+	background: white
 
 .wrap__header
 	@include container()
@@ -123,6 +136,11 @@ header
 			max-width: 34px
 			max-height: 70px
 
+.wrap__underheader
+	width: 100%
+	margin: 0 auto
+	background: rgb(231, 231, 231)
+
 .underheader
 	@include cf
 	background: rgb(231, 231, 231)
@@ -133,7 +151,8 @@ header
 		padding: 40px 0
 	@include susy-breakpoint($desktop, 12)
 		@include span(full)
-		padding: 80px 0
+		padding-top: 100px
+		padding-bottom: 20px
 
 .underheader__rocket
 	@include susy-breakpoint(max-width $tablet, 4)
@@ -153,7 +172,7 @@ header
 
 .rocket__text, .shield__text, .firehelper__text
 	width: 263px
-
+	margin-left: 30%
 
 .underheader__shield
 	@include susy-breakpoint(max-width $tablet, 4)
