@@ -4,6 +4,8 @@
 @import compass/css3
 
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One)
+@import url(https://fonts.googleapis.com/css?family=Oswald)
+@import url(https://fonts.googleapis.com/css?family=Lato)
 
 $susy: (columns: 4, global-box-sizing: border-box, gutters: 29 / 69, container: 1169px, debug: (image: hide))
 $tablet: 600px
@@ -46,10 +48,24 @@ body
 		margin: 0
 		color: rgb(32, 38, 40)
 		font-family: "Fjalla One"
-		font-size: 2.1rem
+		font-size: 2rem
 		font-weight: 400
 		text-transform: uppercase
-		
+
+	h3
+		color: rgb(232, 76, 61)
+		font-family: Lato, sans-serif
+		font-size: 2rem
+		font-weight: 400
+		line-height: 2.4rem
+
+	h4
+		color: rgb(32, 38, 40)
+		font-family: Lato, sans-serif
+		font-size: 1.6rem
+		font-weight: 700
+		line-height: 2.4rem
+
 .icons
 	background: url('../img/sprites/sprites.png') no-repeat
 	display: block
@@ -76,7 +92,7 @@ header
 		float: left
 		color: white
 		font-family: 'Fjalla One', sans-serif
-		font-size: 1.35rem
+		font-size: 2.5rem
 		margin-top: 27px
 
 .menu
@@ -95,12 +111,12 @@ header
 				text-decoration: none
 				color: white
 				font-family: 'Fjalla One', sans-serif
-				font-size: 0.8rem
-				padding: 34px 22px
+				font-size: 1.3rem
+				padding: 30px 22px
 				margin: 0
 				&:hover
 					background: rgb(203, 91, 66)
-					padding: 34px 22px
+					padding: 30px 22px
 
 .owl-carousel
 	.item
@@ -207,13 +223,45 @@ header
 
 .mid
 	@include cf
+	@include susy-breakpoint(max-width $tablet, 4)
+		@include span(full)
+		margin-top: 20px
+	@include susy-breakpoint($tablet $desktop, 8)
+		@include span(full)
+		margin-top: 40px
+	@include susy-breakpoint($desktop, 12)
+		@include span(full)
+		margin-top: 120px
 
 .mid__picture
-	@include span(full)
+	width: 355px
+	height: 355px
+	background: url("../img/midpicture.png") no-repeat center center
+	@include susy-breakpoint(max-width $tablet, full)
+		@include span(full)
+		margin-bottom: 20px
 	@include susy-breakpoint($tablet, 8)
 		@include span(full)
+		margin-bottom: 40px
 	@include susy-breakpoint($desktop, 12)
 		@include span(4 last)
+
+.mid__articles_button
+	margin-top: 30px
+	display: block
+	padding: 5px 3px
+	width: 70px
+	height: 37px
+	color: white
+	text-align: center
+	background: rgb(232, 76, 61)
+	@include border-radius(24px)
+	text-decoration: none
+	font-family: Oswald, sans-serif
+	font-size: 1.4rem
+	line-height: 2.75rem
+	font-weight: 400
+	text-transform: uppercase
 
 .mid__articles
 	@include span(full)
@@ -238,6 +286,27 @@ header
 
 .subscribe
 	@include cf
+	@include border-radius(8px)
+	padding: 30px 0
+	background: rgb(232, 76, 61)
+	h2, p
+		color: white
+	@include susy-breakpoint(max-width $tablet, 4)
+		@include span(full)
+		margin-top: 20px
+	@include susy-breakpoint($tablet $desktop, 8)
+		@include span(full)
+		margin-top: 40px
+	@include susy-breakpoint($desktop, 12)
+		@include span(full)
+		margin-top: 52px
+
+.subscribe__quote_icon
+	float: left
+	background-position: -400px 0
+	width: 70px
+	height: 70px
+	margin: 0 30px
 
 .quote
 	@include span(full)
@@ -245,13 +314,58 @@ header
 		@include span(full)
 	@include susy-breakpoint($desktop, 12)
 		@include span(6 first)
+		margin-top: 18px
 
 .form
-	@include span(full)
+	@include susy-breakpoint(max-width $tablet, 4)
+		@include span(full)
+		margin-top: 18px
 	@include susy-breakpoint($tablet, 8)
-	@include span(full)
+		@include span(full)
+		margin-top: 18px
 	@include susy-breakpoint($desktop, 12)
 		@include span(6 last)
+		margin-top: 18px
+	input
+		float: left
+		display: block
+		margin-top: 20px
+		padding-left: 15px
+		@include border-radius(24px)
+		max-width: 380px
+		width: 100%
+		height: 41px
+		font-family: Lato, sans-serif
+		font-size: 1.4rem
+		line-height: 2.4rem
+		border: 0
+		@include input-placeholder
+			color: rgb(159, 170, 173)
+			font-style: italic
+			text: 20px
+			text-overflow: ellipsis
+		&:focus
+			@include input-placeholder
+				color: transparent
+			outline: none
+
+.subscribe__form_button
+	display: block
+	float: right
+	padding: 9px 0
+	margin-top: 20px
+	margin-right: 34px
+	background: black
+	width: 135px
+	height: 43px
+	color: white
+	text-align: center
+	@include border-radius(24px)
+	text-decoration: none
+	font-family: FjallaOne, sans-serif
+	font-size: 1.5rem
+	font-weight: 400
+	text-transform: uppercase
 
 .prefooter
 	@include cf
@@ -280,7 +394,4 @@ header
 .footer
 	@include cf
 
-//Styles
-.mid__picture
-	background: pink
-	height: 30vh
+
