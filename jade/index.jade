@@ -113,62 +113,83 @@ html(lang="ru")
 					div.aboveFooter__topics
 						h2 aliquam tincidunt
 						div.aboveFooter__topic_item1.topics
-							i.topics_pic1
+							div.topics_pic1
 							div.topics_text1
 								p Mash up each side of the pumpkin seeds with one container of blood oranges.
 								a(href="#") more=>
 						div.aboveFooter__topic_item2.topics
-							i.topics_pic2
+							div.topics_pic2
 							div.topics_text2
 								p Cum deus favere, omnes habitioes imitari alter, placidus fluctuies.
 								a(href="#") more=>
 						div.aboveFooter__topic_item3.topics
-							i.topics_pic3
+							div.topics_pic3
 							div.topics_text3
 								p Cum deus favere, omnes habitioes imitari alter, placidus fluctuies.
 								a(href="#") more=>
 
 					div.feedback
 						h2 demissios credere!
-						form
-							p Ecce. Volare hic ducunt ad raptus gallus. Onus de superbus navis, promissio consilium!
-							input(type='text' placeholder='name...')
-							input(type='email' placeholder='email...')
-							input(type='textarea' placeholder='your query...')
-							a(href="#") send
+						div.feedback__form
+							form
+								p Ecce. Volare hic ducunt ad raptus gallus. Onus de superbus navis, promissio consilium!
+								input.feedback__form_singleLineInput(type='text' placeholder='name...')
+								input.feedback__form_singleLineInput(type='email' placeholder='email...')
+								input.feedback__form_textArea(type='textarea' placeholder='your query...')
+								a.feedback__form_button(href="#") send &rarr;
 					div.contacts
 						h2 fraticinidas peregrinatione!
-							div.subitem4
+						div.contactsItems
+							i.contacts__icons_homeIcon
+							div.contacts__adress.contactsItems__textBlock
 								h3 historias velum!
 								p Mash up each side of the pumpkin seeds with one container of blood oranges.
-							div.subitem5
+						div.contactsItems
+							i.contacts__icons_phoneIcon
+							div.contacts__phone.contactsItems__textBlock
 								h3 monss resistere!
 								p Cum deus favere, omnes habitioes imitari alter, placidus fluctuies.
-							div.subitem6
+						div.contactsItems
+							i.contacts__icons_mailIcon
+							div.contacts__mail.contactsItems__textBlock
 								h3 hilotaes tolerare!
 								p Cum deus favere, omnes habitioes imitari alter, placidus fluctuies.
 
 		footer
 			div.wrap.footer
-				div.footermenu
-					ul
-						li
-							a(href="#")
-						li
-							a(href="#")
-						li
-							a(href="#")
-						li
-							a(href="#")
-						li
-							a(href="#")
-				div
-					a(href="#")
-					p Sunt musaes perdere pius, salvus terrores.
+				div.footermenuWithCopyrights
+					div.footermenu
+						ul
+							li
+								a(href="#") home
+								span /
+							li
+								a(href="#") about
+								span /
+							li
+								a(href="#") services
+								span /
+							li
+								a(href="#") portfolio
+								span /
+							li
+								a(href="#") contact
+
+					div.copyRights
+						p
+							a(href="#") Designed by: www.alltempalteneeds.com /
+							a(href="#")  Images from: www.alltempalteneeds.com /
+							|  Copyright(c) website name.
+
 				div.social
-					i
-					i
-					i
+					a(href="")
+						i.icons.social__icon_facebook
+					a(href="")
+						i.icons.social__icon_twitter
+					a(href="")
+						i.icons.social__icon_linkID
+
+
 		script(src="js/jquery-1.9.1.min.js")
 		script(src="js/plugins/owl.carousel.min.js")
 		script(src="js/custom.js")

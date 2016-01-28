@@ -20,12 +20,19 @@ $line-height-base: 26px
 		display: table
 
 @include border-box-sizing
+@include font-face("icomoon", font-files("../fonts/fonts-icons/icomoon.ttf", "../fonts/fonts-icons/icomoon.woff", "../fonts/fonts-icons/icomoon.svg","../fonts/fonts-icons/icomoon.eot"))
 
 .wrap
 	@include container()
 	background: rgb(255, 255, 255)
 
 //Layout
+html, body
+	height: 100%
+
+header, main
+	min-height: 50%
+
 html
 	font-size: $fontbase
 
@@ -378,6 +385,7 @@ header
 	@include cf
 	@include span(full)
 	margin-top: 70px
+	margin-bottom: 264px
 	h2
 		margin-bottom: 30px
 
@@ -392,35 +400,30 @@ header
 	border: rgb(242, 242, 242) solid 1px
 	border-left: 0
 	border-right: 0
-	padding: 20px 0
+	padding: 32px 0
 
 .topics_pic1
-	display: block
 	float: left
 	width: 70px
 	height: 70px
-	margin-right: 33px
 	background: url('../img/topic_pic1.png') no-repeat
 
 .topics_pic2
-	display: block
 	float: left
 	width: 70px
 	height: 70px
-	margin-right: 33px
 	background: url('../img/topic_pic2.png') no-repeat
 
 .topics_pic3
-	display: block
 	float: left
 	width: 70px
 	height: 70px
-	margin-right: 33px
 	background: url('../img/topic_pic3.png') no-repeat
 
-.topics_text1
-	@include cf
-
+.topics_text1, .topics_text2, .topics_text3
+	margin-left: 105px
+	p
+		margin: 0
 
 .feedback
 	@include span(full)
@@ -429,6 +432,74 @@ header
 	@include susy-breakpoint($desktop, 12)
 		@include span(4)
 
+.feedback__form
+	background: rgb(231, 231, 231)
+	@include border-radius(8px)
+	padding: 18px 30px 32px 30px
+
+.feedback__form_singleLineInput
+	display: block
+	margin-top: 25px
+	padding-left: 15px
+	@include border-radius(24px)
+	max-width: 312px
+	width: 100%
+	height: 41px
+	font-family: Lato, sans-serif
+	font-size: 1.4rem
+	line-height: 2.4rem
+	border: 0
+	@include input-placeholder
+		color: rgb(159, 170, 173)
+		font-style: italic
+		text: 20px
+		text-overflow: ellipsis
+	&:focus
+		@include input-placeholder
+			color: transparent
+		outline: none
+
+.feedback__form_textArea
+	display: block
+	margin-top: 25px
+	padding-left: 15px
+	@include border-radius(10px)
+	max-width: 312px
+	width: 100%
+	height: 83px
+	font-family: Lato, sans-serif
+	font-size: 1.4rem
+	line-height: 2.4rem
+	border: 0
+	@include input-placeholder
+		color: rgb(159, 170, 173)
+		font-style: italic
+		text: 20px
+		text-overflow: ellipsis
+		text-align: left
+		vertical-align: top
+	&:focus
+		@include input-placeholder
+			color: transparent
+		outline: none
+
+a.feedback__form_button
+	display: block
+	padding: 9px 0
+	margin-top: 20px
+	margin-right: 34px
+	background: rgb(202, 90, 66)
+	width: 100px
+	height: 43px
+	color: white
+	text-align: center
+	@include border-radius(24px)
+	text-decoration: none
+	font-family: FjallaOne, sans-serif
+	font-size: 1.5rem
+	font-weight: 400
+	text-transform: uppercase
+
 .contacts
 	@include span(full)
 	@include susy-breakpoint($tablet, 8)
@@ -436,6 +507,113 @@ header
 	@include susy-breakpoint($desktop, 12)
 		@include span(4 last)
 
-.footer
-	@include cf
+.contactsItems
+	border: rgb(242, 242, 242) solid 1px
+	border-left: 0
+	border-right: 0
+	padding: 26px 0
 
+	[class^="contacts__icons_"]
+		font-family: 'icomoon' !important
+		speak: none
+		font-style: normal
+		font-weight: normal
+		font-variant: normal
+		text-transform: none
+		line-height: 1
+		font-size: 3rem
+		float: left
+
+.contacts__icons_homeIcon
+	&:before
+		content: '\e900'
+.contacts__icons_phoneIcon
+	&:before
+		content: '\e901'
+.contacts__icons_mailIcon
+	&:before
+		content: '\e902'
+
+
+.contactsItems__textBlock
+	margin-left: 60px
+	h3
+		font-family: Lato, sans-serif
+		font-size: 1.6rem
+		color: rgb(181, 98, 65)
+		text-transform: capitalize
+		margin: 0 0 2px 0
+	p
+		font-family: Lato, sans-serif
+		text-transform: none
+		margin: 0
+
+footer
+	background: rgb(35, 37, 40)
+	position: absolute
+	margin-top: -204px
+	width: 100%
+	height: 204px
+
+.footer
+	@include cf()
+	background: rgb(35, 37, 40)
+	margin-top: 78px
+.footermenuWithCopyrights
+	float: left
+
+.footermenu
+	float: left
+	ul
+		padding: 0
+		margin: 0
+		li
+			list-style: none
+			float: left
+			padding: 0
+			margin: 0
+			span
+				font-family: 'Lato', sans-serif
+				font-size: 1.4rem
+				color: rgb(121, 124, 126)
+				margin: 0 15px
+			a
+				text-transform: capitalize
+				text-decoration: none
+				color: white
+				font-family: 'Lato', sans-serif
+				font-size: 1.4rem
+				margin: 0
+
+.social
+	float: right
+
+.social__icon_facebook
+	float: left
+	background-position: -100px -100px
+	width: 43px
+	height: 43px
+
+.social__icon_twitter
+	float: left
+	background-position: -50px -100px
+	width: 43px
+	height: 43px
+	margin-left: 10px
+
+.social__icon_linkID
+	float: right
+	background-position: -100px -100px
+	width: 43px
+	height: 43px
+	margin-left: 10px
+
+.copyRights
+	clear: both
+	margin-top: 5px
+	a
+		text-decoration: none
+		font-family: 'Lato', sans-serif
+		font-size: 1.4rem
+		&:nth-of-type(2n)
+			color: rgb(121, 124, 126)
